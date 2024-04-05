@@ -9,11 +9,13 @@ class DialogScreen extends StatefulWidget {
   State<DialogScreen> createState() => _DialogScreenState();
 }
 
-class _DialogScreenState extends State<DialogScreen> {
+class _DialogScreenState extends State<DialogScreen> 
+{
   TextEditingController dateInput = TextEditingController();
 
   @override
-  void initState() {
+  void initState() 
+  {
     dateInput.text = ""; //set the initial value of text field
     super.initState();
   }
@@ -21,7 +23,8 @@ class _DialogScreenState extends State<DialogScreen> {
   DateTime? date;
   bool light = true;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
@@ -31,12 +34,14 @@ class _DialogScreenState extends State<DialogScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-                onPressed: () {
+                onPressed: () 
+                {
                   dialogOpen("ufeuf");
                 },
                 child: Text('Alertdialog')),
             TextButton(
-              onPressed: () {
+              onPressed: () 
+              {
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
@@ -45,7 +50,8 @@ class _DialogScreenState extends State<DialogScreen> {
                         titlePadding: EdgeInsets.zero,
                         buttonPadding: EdgeInsets.zero,
                         title: const Text('Basic dialog title'),
-                        content: const Text(
+                        content: const Text
+                        (
                           'A dialog is a type of modal window that\n'
                           'appears in front of app content to\n'
                           'provide critical information, or prompt\n'
@@ -57,7 +63,8 @@ class _DialogScreenState extends State<DialogScreen> {
                               textStyle: Theme.of(context).textTheme.labelLarge,
                             ),
                             child: const Text('Disable'),
-                            onPressed: () {
+                            onPressed: () 
+                            {
                               Navigator.of(context).pop();
                             },
                           ),
@@ -66,7 +73,8 @@ class _DialogScreenState extends State<DialogScreen> {
                               textStyle: Theme.of(context).textTheme.labelLarge,
                             ),
                             child: const Text('Enable'),
-                            onPressed: () {
+                            onPressed: () 
+                            {
                               Navigator.of(context).pop();
                             },
                           ),
@@ -81,7 +89,8 @@ class _DialogScreenState extends State<DialogScreen> {
               activeColor: Colors.red,
               inactiveThumbColor: Colors.green,
               trackOutlineColor: MaterialStatePropertyAll(Colors.red),
-              onChanged: (bool value) {
+              onChanged: (bool value) 
+              {
                 setState(() {
                   light = value;
                 });
@@ -89,7 +98,8 @@ class _DialogScreenState extends State<DialogScreen> {
             ),
             ElevatedButton(
               child: const Text('showModalBottomSheet'),
-              onPressed: () {
+              onPressed: () 
+              {
                 showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
